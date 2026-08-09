@@ -1,0 +1,28 @@
+{
+  "schema": "glaciereq.proof-receipt.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "source_sha": "37c7f623d2ad7143e1cb8656bbad025ef58d7eff8898179a981ba994eb2de5d9",
+  "proof_id": "wave-a-residual-anthropic-refusal-replay-harness-1786260727",
+  "environment": {
+    "python": "3.9.6"
+  },
+  "tests": [
+    "unittest discover -s tests -v (x2)"
+  ],
+  "adversarial_tests": [
+    "tests/test_adversarial.py"
+  ],
+  "runtime": {
+    "operate": "scripts/operate.py (x2)",
+    "dual_run_ok": true
+  },
+  "result": "PASS",
+  "limitations": [
+    "not production deployed",
+    "reference implementation only"
+  ],
+  "timestamp": "2026-08-09T07:32Z",
+  "artifact_hashes": {
+    "operability_receipt": "9d35d21f48a7019a03d2ef9fffb5bd511939f58ebc506a9bc4d08a3a95602d5e"
+  }
+}

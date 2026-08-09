@@ -1,0 +1,15 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "at": "2026-08-09T07:32Z",
+  "source_sha": "37c7f623d2ad7143e1cb8656bbad025ef58d7eff8898179a981ba994eb2de5d9",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "all_ok": true,
+    "first_reason": "RED_LINE",
+    "n": 1,
+    "ok": true
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

@@ -1,16 +1,26 @@
 {
   "schema": "glaciereq.operability-receipt.v1",
   "repository": "GlacierEQ/anthropic-refusal-replay-harness",
-  "at": "2026-08-09T07:40Z",
-  "source_sha": "37c7f623d2ad7143e1cb8656bbad025ef58d7eff8898179a981ba994eb2de5d9",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "8affbc4d5d5abb6463b6d758a50c19756e19488f91af632fe923d2acc94ffcce",
   "entry": "scripts/operate.py",
   "primary_output": {
-    "all_ok": true,
-    "first_reason": "RED_LINE",
-    "n": 1,
-    "ok": true
+    "module": "refusal_harness",
+    "ok": true,
+    "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+    "smoke": {
+      "args": [
+        "<function _sample_args.<locals>.<lambda>"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "class",
+      "method": "all_ok",
+      "module_local": true,
+      "name": "RefusalReplayHarness",
+      "result": true
+    }
   },
   "dual_run_ok": true,
-  "result": "PASS",
-  "scratch_launch_log": "wave_a/anthropic-refusal-replay-harness/launch.log"
+  "result": "PASS"
 }

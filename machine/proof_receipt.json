@@ -1,14 +1,15 @@
 {
   "schema": "glaciereq.proof-receipt.v1",
   "repository": "GlacierEQ/anthropic-refusal-replay-harness",
-  "source_sha": "37c7f623d2ad7143e1cb8656bbad025ef58d7eff8898179a981ba994eb2de5d9",
-  "proof_id": "wave-a-residual-green-anthropic-refusal-replay-harness-1786261245",
+  "source_sha": "8affbc4d5d5abb6463b6d758a50c19756e19488f91af632fe923d2acc94ffcce",
+  "proof_id": "elite-anthropic-refusal-replay-harness-1786335149",
   "environment": {
-    "python": "3.9.6",
-    "PYTHONPATH": "."
+    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "/Users/kcbflux/job-app/repos/anthropic-refusal-replay-harness:/Users/kcbflux/job-app/repos/anthropic-refusal-replay-harness/src",
+    "entry": "unittest"
   },
   "tests": [
-    "PYTHONPATH=. python3 -m unittest discover -s tests -v (x2)"
+    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
   ],
   "adversarial_tests": [
     "tests/test_adversarial.py"
@@ -23,9 +24,8 @@
     "not production deployed",
     "reference implementation only"
   ],
-  "timestamp": "2026-08-09T07:40Z",
+  "timestamp": "2026-08-10T04:12Z",
   "artifact_hashes": {
-    "operability_receipt": "efbde42e8fda4a62b1afd9bd26b69b29239e8614c511404d460a2fdae6da3692"
-  },
-  "scratch_proof_log": "wave_a/anthropic-refusal-replay-harness/proof.log"
+    "operability_receipt": "c0c20ee1c2a2ef66c73ebc58a58f90477f4e74879f869af79acdfec24914553b"
+  }
 }

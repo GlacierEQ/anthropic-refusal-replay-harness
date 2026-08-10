@@ -1,10 +1,11 @@
 {
   "schema": "glaciereq.promotion-authority-grant.v1",
   "repository": "GlacierEQ/anthropic-refusal-replay-harness",
-  "source_sha": "37c7f623d2ad7143e1cb8656bbad025ef58d7eff8898179a981ba994eb2de5d9",
-  "proof_receipt_digest": "9f004540474eec29fa6ea2bcdf7674c213360d2847213dbbe294cf7ac373d224",
-  "not_after": 1786347645.105215,
-  "mac": "4738414044e4559289de8203bf6d6ac2a0b1312f727ce545406b68e1e8cf9df5",
+  "source_sha": "8affbc4d5d5abb6463b6d758a50c19756e19488f91af632fe923d2acc94ffcce",
+  "proof_receipt_digest": "7b97fd1a85356841aaa492c2d77480da72c64bdcf324df138ca6699f9a440c52",
+  "not_after": 1788927149.234226,
+  "mac": "eb7e88a0d9e51042fdf160ce449ebe69a77f1530c54f62c284f549013d7c9285",
   "issuer": "local_operator_promotion_authority",
-  "verified": true
+  "verified": true,
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
 }

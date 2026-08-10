@@ -1,0 +1,22 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "position_state": "RESOLVED",
+  "role": "company_specific_specialist_system",
+  "company_target": "Anthropic",
+  "canonical_identity": "refusal-replay-harness",
+  "unique_value": [
+    "golden refusal cases preserve expected allow/refuse decisions and required reason semantics",
+    "policy drift that converts a protected refusal into allow fails deterministically",
+    "safety-regression evidence is replayable rather than anecdotal"
+  ],
+  "capability_contribution": {
+    "family": "safety_refusal_regression_replay",
+    "extractable_mechanisms": ["golden refusal replay", "reason-semantic regression checks", "fail-closed safety drift detection"],
+    "ownership": "This repository remains the owning Anthropic-specialist implementation; extraction preserves identity and lineage."
+  },
+  "integration_policy": {"preserve_repository_identity":true,"preserve_lineage":true,"presentation_independent":true,"size_or_loc_not_dispositive":true,"absorption_requires_functional_equivalence":true,"absorption_requires_proof_equivalence":true},
+  "next_evolution": "Add structured refusal-reason taxonomy, mutation/fuzz replay, and cross-version behavioral diffing while retaining deterministic fail-closed regression semantics.",
+  "evidence_refs": ["ISSUE_CONTRACT.md","machine/target-contract.json","machine/proof_receipt.json","machine/operability_receipt.json","machine/promotion_authority.json"],
+  "nonclaims": ["no Anthropic affiliation", "not a production model-policy service"]
+}

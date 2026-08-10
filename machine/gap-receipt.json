@@ -1,0 +1,9 @@
+{
+  "schema": "glaciereq.elite-leaf-gap.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "at": "2026-08-10T05:49Z",
+  "blocker": "TESTS_FAIL",
+  "evidence": "leaves/anthropic-refusal-replay-harness/proof.log+launch.log",
+  "not_promoted_reason": "pr_ok=False ran=11 op_ok=True primary_ok=True",
+  "principal_state_claim": null
+}

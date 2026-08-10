@@ -1,31 +1,42 @@
 {
   "schema": "glaciereq.repo-target-contract.v1",
-  "identity": {
-    "repository_id": "GlacierEQ/anthropic-refusal-replay-harness",
-    "local_path": "/Users/kcbflux/job-app/repos/anthropic-refusal-replay-harness"
-  },
+  "identity": {"repository_id": "GlacierEQ/anthropic-refusal-replay-harness"},
   "current": {
-    "state": "VERTICAL_SLICE",
+    "principal_state": "PROMOTED",
     "implemented": true,
-    "tested": false,
+    "tested": true,
+    "adversarial_verified": true,
+    "operable": true,
+    "proof_receipt_bound": true,
+    "authority_bound": true,
     "deployed": false
   },
   "target": {
-    "purpose": "# ISSUE CONTRACT\n## Pain\nSafety regressions silently flip refuse\u2192allow.\n## Success\n- Golden cases with expected reason\n- Harness fails on drift\n",
-    "central_bottleneck": "see ISSUE_CONTRACT"
+    "purpose": "Detect safety-policy regressions by replaying golden refusal cases with expected decisions and reasons and failing closed when behavior drifts.",
+    "central_bottleneck": "A refuse-to-allow regression can look like ordinary model variation unless expected refusal semantics are replayed deterministically.",
+    "success": [
+      "Golden cases preserve expected refusal decisions and reasons.",
+      "Replay fails when a protected refusal changes to allow or loses its required reason semantics.",
+      "Regression output is deterministic enough to bind to repository proof."
+    ]
   },
-  "invariants": [],
+  "invariants": [
+    "protected golden refusals cannot silently become allows",
+    "expected refusal reason semantics remain explicit",
+    "replay drift is surfaced as failure, not normalized away"
+  ],
+  "donor_plan": {
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
+    "donors": [],
+    "basis": "The current repository owns the implemented refusal-replay mechanism; no donor implementation is required to define or operate it.",
+    "future_extraction": "Reusable replay semantics may be extracted only with lineage, functional/proof equivalence, and preservation of this repository's identity."
+  },
   "promotion": {
-    "required_tests": [
-      "unit",
-      "adversarial"
-    ],
+    "required_tests": ["unit", "adversarial", "operability"],
     "require_exact_source_sha": true,
     "require_receipt": true,
     "require_nonclaims": true
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "reference implementation only"
-  ]
+  "nonclaims": ["no Anthropic affiliation", "reference safety-regression engineering system, not a production model policy service"]
 }

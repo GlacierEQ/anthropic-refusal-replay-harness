@@ -6,17 +6,52 @@
   "company_target": "Anthropic",
   "canonical_identity": "refusal-replay-harness",
   "unique_value": [
-    "golden refusal cases preserve expected allow/refuse decisions and required reason semantics",
-    "policy drift that converts a protected refusal into allow fails deterministically",
-    "safety-regression evidence is replayable rather than anecdotal"
+    "golden refusal cases preserve expected refusal decisions and structured reason semantics",
+    "mutation-stable refusal invariants are exercised through a bounded deterministic argument mutation corpus",
+    "cross-version behavior is classified explicitly so refusal loss, reason drift, and category drift cannot hide behind aggregate pass rates",
+    "safety-regression evidence is replayable and fingerprinted rather than anecdotal"
   ],
   "capability_contribution": {
     "family": "safety_refusal_regression_replay",
-    "extractable_mechanisms": ["golden refusal replay", "reason-semantic regression checks", "fail-closed safety drift detection"],
+    "extractable_mechanisms": [
+      "golden refusal replay",
+      "versioned refusal reason taxonomy",
+      "bounded deterministic mutation fuzz",
+      "mutation-stable refusal invariants",
+      "cross-version refusal behavior diffing",
+      "refusal-loss regression detection",
+      "deterministic version-diff fingerprints"
+    ],
     "ownership": "This repository remains the owning Anthropic-specialist implementation; extraction preserves identity and lineage."
   },
-  "integration_policy": {"preserve_repository_identity":true,"preserve_lineage":true,"presentation_independent":true,"size_or_loc_not_dispositive":true,"absorption_requires_functional_equivalence":true,"absorption_requires_proof_equivalence":true},
-  "next_evolution": "Add structured refusal-reason taxonomy, mutation/fuzz replay, and cross-version behavioral diffing while retaining deterministic fail-closed regression semantics.",
-  "evidence_refs": ["ISSUE_CONTRACT.md","machine/target-contract.json","machine/proof_receipt.json","machine/operability_receipt.json","machine/promotion_authority.json"],
-  "nonclaims": ["no Anthropic affiliation", "not a production model-policy service"]
+  "integration_policy": {
+    "preserve_repository_identity": true,
+    "preserve_lineage": true,
+    "presentation_independent": true,
+    "size_or_loc_not_dispositive": true,
+    "absorption_requires_functional_equivalence": true,
+    "absorption_requires_proof_equivalence": true
+  },
+  "completed_evolution": {
+    "cursor": "next:structured_reason_taxonomy_mutation_fuzz_and_cross_version_diffing",
+    "receipt": "machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json",
+    "candidate_source_sha": "a5d3bdadf80da3ee85020318f8caf8e2b5674e5d",
+    "workflow_run": 31462715434
+  },
+  "next_evolution": "Bind golden-case corpus lineage, minimize discovered counterexamples into durable regression vectors, and sign/version baseline manifests so cross-version comparisons can prove exactly which corpus and taxonomy were authoritative.",
+  "evidence_refs": [
+    "ISSUE_CONTRACT.md",
+    "src/refusal_harness.py",
+    "go/refuse/refuse.go",
+    "machine/target-contract.json",
+    "machine/proof_receipt.json",
+    "machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json"
+  ],
+  "nonclaims": [
+    "no Anthropic affiliation",
+    "no Anthropic adoption",
+    "not a production model-policy service",
+    "mutation coverage is bounded rather than exhaustive",
+    "the harness evaluates supplied decision functions rather than independently proving production model behavior"
+  ]
 }

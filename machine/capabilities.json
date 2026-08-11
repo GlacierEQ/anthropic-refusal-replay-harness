@@ -1,1 +1,24 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "capability_family": "safety_refusal_regression_replay",
+  "capabilities": [
+    "golden-refusal-replay",
+    "structured-refusal-reason-taxonomy",
+    "fail-closed-reason-semantic-regression",
+    "bounded-deterministic-mutation-fuzz",
+    "mutation-stable-refusal-invariants",
+    "cross-version-refusal-behavior-diffing",
+    "refusal-loss-regression-detection",
+    "deterministic-version-diff-fingerprints"
+  ],
+  "evidence_refs": [
+    "src/refusal_harness.py",
+    "go/refuse/refuse.go",
+    "tests/test_refusal_harness.py",
+    "go/refuse/refuse_test.go",
+    "machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json",
+    "machine/canonical-position.json"
+  ],
+  "truth_boundary": "Repository-local regression harness over supplied cases and supplied decision functions. Mutation coverage is bounded, not exhaustive. No Anthropic adoption, production model-policy claim, or tool execution is implied."
+}

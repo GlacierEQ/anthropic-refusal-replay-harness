@@ -1,64 +1,49 @@
 {
   "schema": "glaciereq.repo-target-contract.v1",
-<<<<<<< HEAD
-  "identity": {"repository_id": "GlacierEQ/anthropic-refusal-replay-harness"},
+  "identity": {
+    "repository_id": "GlacierEQ/anthropic-refusal-replay-harness",
+    "family": "elite-estate",
+    "canonical_identity": "refusal-replay-harness"
+  },
   "current": {
-    "principal_state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
-    "adversarial_verified": true,
-    "operable": true,
-    "proof_receipt_bound": true,
-    "authority_bound": true,
-    "deployed": false
+    "deployed": false,
+    "evolution_generation": 1
   },
   "target": {
-    "purpose": "Detect safety-policy regressions by replaying golden refusal cases with expected decisions and reasons and failing closed when behavior drifts.",
-    "central_bottleneck": "A refuse-to-allow regression can look like ordinary model variation unless expected refusal semantics are replayed deterministically.",
-    "success": [
-      "Golden cases preserve expected refusal decisions and reasons.",
-      "Replay fails when a protected refusal changes to allow or loses its required reason semantics.",
-      "Regression output is deterministic enough to bind to repository proof."
-    ]
+    "purpose": "Detect refusal-policy regressions with structured reason semantics, mutation-stable golden cases, and deterministic cross-version behavioral diffs.",
+    "central_bottleneck": "A protected refusal can degrade through allow conversion, reason drift, category drift, or mutation sensitivity while a flat string-only golden test reports too little about the regression."
   },
   "invariants": [
     "protected golden refusals cannot silently become allows",
-    "expected refusal reason semantics remain explicit",
-    "replay drift is surfaced as failure, not normalized away"
+    "reason codes map through an explicit versioned taxonomy",
+    "unknown reason categories do not count as successful golden semantics",
+    "only cases marked mutation-stable are fuzzed for same-reason preservation",
+    "mutation fuzz is bounded and deterministic",
+    "cross-version comparison explicitly classifies refusal loss and semantic drift",
+    "version-diff reports are deterministically fingerprinted",
+    "duplicate case identity fails closed"
   ],
-  "donor_plan": {
-    "status": "RESOLVED",
-    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
-    "donors": [],
-    "basis": "The current repository owns the implemented refusal-replay mechanism; no donor implementation is required to define or operate it.",
-    "future_extraction": "Reusable replay semantics may be extracted only with lineage, functional/proof equivalence, and preservation of this repository's identity."
-  },
   "promotion": {
-    "required_tests": ["unit", "adversarial", "operability"],
+    "required_tests": ["python", "go", "adversarial", "mutation_fuzz", "cross_version_diff"],
     "require_exact_source_sha": true,
     "require_receipt": true,
     "require_nonclaims": true
   },
-  "nonclaims": ["no Anthropic affiliation", "reference safety-regression engineering system, not a production model policy service"]
-=======
-  "identity": {
-    "repository_id": "GlacierEQ/anthropic-refusal-replay-harness",
-    "family": "elite-estate"
-  },
-  "current": {
-    "state": "PROMOTED",
-    "implemented": true,
-    "tested": true,
-    "deployed": false
-  },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
-  ],
   "donor_plan": {
-    "mode": "none",
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
     "donors": []
   },
-  "frozen_at": "2026-08-10T04:12Z"
->>>>>>> bb5124e (chore: Hyper Excellence Activation & structural matrix alignment)
+  "nonclaims": [
+    "no Anthropic affiliation",
+    "no Anthropic adoption",
+    "reference safety-regression harness, not a production model policy service",
+    "mutation fuzz is bounded rather than exhaustive",
+    "the harness does not execute tools or independently prove production model behavior"
+  ],
+  "completed_evolution_receipt": "machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json",
+  "next_evolution": "next:corpus_lineage_minimized_counterexamples_and_signed_regression_baselines"
 }

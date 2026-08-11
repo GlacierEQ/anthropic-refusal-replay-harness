@@ -6,18 +6,18 @@
   "gates": {
     "IDENTITY_RESOLVED": {"status":"PASS","evidence":"repository identity + machine/canonical-position.json"},
     "PROBLEM_VERIFIED": {"status":"PASS","evidence":"ISSUE_CONTRACT.md + tested refusal-replay mechanism"},
-    "TARGET_CONTRACT_FROZEN": {"status":"PASS","evidence":"machine/target-contract.json"},
+    "TARGET_CONTRACT_FROZEN": {"status":"PASS","evidence":"conflict-free machine/target-contract.json refreshed after completed evolution"},
     "DONOR_PLAN_RESOLVED": {"status":"PASS","evidence":"independent Anthropic-specialist mechanism; identity and lineage preserved"},
-    "VERTICAL_SLICE_ALIVE": {"status":"PASS","evidence":"src mechanism + scripts/operate.py"},
-    "CENTRAL_MECHANISM_PRESENT": {"status":"PASS","evidence":"golden refusal replay with reason-semantic regression checks and fail-closed drift detection"},
-    "DETERMINISTIC_PROOF_GREEN": {"status":"PASS","evidence":"PR #3 candidate e689ff6ce065edcf2f7284b53053de0c6b104b0d passed Python and Go in workflow 31451453394"},
-    "ADVERSARIAL_SURVIVAL": {"status":"PASS","evidence":"adversarial and refusal-harness tests passed in workflow 31451453394"},
-    "OPERABLE_AND_OBSERVABLE": {"status":"PASS","evidence":"machine/operability_receipt.json + scripts/operate.py"},
-    "PROOF_RECEIPT_BOUND": {"status":"PASS","evidence":"machine/proof_receipt.json retained"},
-    "AUTHORITY_BOUND": {"status":"PASS","evidence":"machine/promotion_authority.json; independent reference authority only"},
-    "PROJECTION_TRUTH_CLOSED": {"status":"PASS","evidence":"canonical position preserves no Anthropic affiliation and no production policy-service claim"},
-    "CANONICAL_POSITION_RESOLVED": {"status":"PASS","evidence":"machine/canonical-position.json owns safety_refusal_regression_replay"},
-    "EVOLUTION_CURSOR_DEFINED": {"status":"PASS","evidence":"next:structured_reason_taxonomy_mutation_fuzz_and_cross_version_diffing"},
+    "VERTICAL_SLICE_ALIVE": {"status":"PASS","evidence":"src/refusal_harness.py + go/refuse/refuse.go + scripts/operate.py"},
+    "CENTRAL_MECHANISM_PRESENT": {"status":"PASS","evidence":"structured refusal taxonomy, bounded mutation fuzz, and deterministic cross-version behavior diffing"},
+    "DETERMINISTIC_PROOF_GREEN": {"status":"PASS","evidence":"candidate a5d3bdadf80da3ee85020318f8caf8e2b5674e5d passed Python and Go in workflow 31462715434"},
+    "ADVERSARIAL_SURVIVAL": {"status":"PASS","evidence":"workflow 31462715434 proves refusal-loss detection, category-drift detection, mutation-stable red-line preservation, duplicate-case refusal, and unknown-reason failure"},
+    "OPERABLE_AND_OBSERVABLE": {"status":"PASS","evidence":"existing operator surface preserved; mutation and version-diff results expose structured classification and deterministic fingerprints"},
+    "PROOF_RECEIPT_BOUND": {"status":"PASS","evidence":"machine/proof_receipt.json retained + machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json"},
+    "AUTHORITY_BOUND": {"status":"PASS","evidence":"independent reference authority only; production model behavior and exhaustive fuzzing remain explicit nonclaims"},
+    "PROJECTION_TRUTH_CLOSED": {"status":"PASS","evidence":"canonical position preserves no Anthropic affiliation/adoption and bounds mutation coverage to deterministic regression vectors"},
+    "CANONICAL_POSITION_RESOLVED": {"status":"PASS","evidence":"machine/canonical-position.json owns safety_refusal_regression_replay with completed evolution receipt"},
+    "EVOLUTION_CURSOR_DEFINED": {"status":"PASS","evidence":"next:corpus_lineage_minimized_counterexamples_and_signed_regression_baselines"},
     "problem_verified": true,
     "unique_value_known": true,
     "canonical_identity_known": true,
@@ -47,13 +47,18 @@
     {"from":"PROMOTED","to":"CANONICAL","gate":"CANONICAL_POSITION_RESOLVED","result":"PASS"},
     {"from":"CANONICAL","to":"EVOLVING","gate":"EVOLUTION_CURSOR_DEFINED","result":"PASS"}
   ],
-  "contract_ref": "machine/target-contract.json",
-  "scores_ref": "machine/excellence-scores.json",
-  "canonical_position_ref": "machine/canonical-position.json",
-  "evolution_cursor": "next:structured_reason_taxonomy_mutation_fuzz_and_cross_version_diffing",
+  "evolution_history": [
+    {
+      "consumed_cursor": "next:structured_reason_taxonomy_mutation_fuzz_and_cross_version_diffing",
+      "candidate_source_sha": "a5d3bdadf80da3ee85020318f8caf8e2b5674e5d",
+      "workflow_run": 31462715434,
+      "result": "PASS",
+      "receipt": "machine/evolution-receipts/2026-08-11-taxonomy-mutation-version-diff.json",
+      "next_cursor": "next:corpus_lineage_minimized_counterexamples_and_signed_regression_baselines"
+    }
+  ],
   "gap_reconciliation": {
     "historical_gap_ref": "machine/gap-receipt.json",
-    "historical_gap_at": "2026-08-10T05:49Z",
     "status": "SUPERSEDED_BY_EXACT_BRANCH_CI",
     "repair_base_sha": "c11c91f89c2e450b86991e737e88a0a8bb79148b",
     "tested_candidate_sha": "e689ff6ce065edcf2f7284b53053de0c6b104b0d",
@@ -61,5 +66,9 @@
     "python": "PASS",
     "go": "PASS"
   },
+  "contract_ref": "machine/target-contract.json",
+  "scores_ref": "machine/excellence-scores.json",
+  "canonical_position_ref": "machine/canonical-position.json",
+  "evolution_cursor": "next:corpus_lineage_minimized_counterexamples_and_signed_regression_baselines",
   "state": "EVOLVING"
 }

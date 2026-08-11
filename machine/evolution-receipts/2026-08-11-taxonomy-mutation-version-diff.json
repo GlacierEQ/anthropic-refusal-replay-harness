@@ -1,0 +1,30 @@
+{
+  "schema": "glaciereq.repo-evolution-receipt.v1",
+  "repository": "GlacierEQ/anthropic-refusal-replay-harness",
+  "consumed_cursor": "next:structured_reason_taxonomy_mutation_fuzz_and_cross_version_diffing",
+  "candidate_source_sha": "a5d3bdadf80da3ee85020318f8caf8e2b5674e5d",
+  "workflow_run": 31462715434,
+  "result": "PASS",
+  "observed_lanes": {
+    "python_unittest": "PASS",
+    "go": "PASS"
+  },
+  "verified_mechanisms": [
+    "versioned refusal-reason taxonomy maps stable reason codes to structured categories",
+    "unknown reason taxonomy cannot silently satisfy a golden refusal",
+    "bounded deterministic argument mutation corpus exercises mutation-stable refusal cases",
+    "mutation results bind mutation identity and argument digest",
+    "cross-version comparison classifies refusal loss, refusal gain, reason drift, category drift, both-allowed drift, and unchanged behavior",
+    "refusal-loss regressions are explicitly detectable",
+    "version-diff reports carry deterministic fingerprints",
+    "duplicate golden case identifiers fail closed"
+  ],
+  "boundaries": [
+    "mutation fuzz is bounded deterministic regression coverage, not exhaustive fuzzing",
+    "only cases explicitly marked mutation-stable are required to preserve their refusal reason across mutations",
+    "the harness evaluates supplied decision functions and supplied golden cases; it does not prove a production model policy",
+    "no Anthropic affiliation or adoption",
+    "no tool execution"
+  ],
+  "next_cursor": "next:corpus_lineage_minimized_counterexamples_and_signed_regression_baselines"
+}

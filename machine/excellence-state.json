@@ -10,8 +10,8 @@
     "DONOR_PLAN_RESOLVED": {"status":"PASS","evidence":"independent Anthropic-specialist mechanism; identity and lineage preserved"},
     "VERTICAL_SLICE_ALIVE": {"status":"PASS","evidence":"src mechanism + scripts/operate.py"},
     "CENTRAL_MECHANISM_PRESENT": {"status":"PASS","evidence":"golden refusal replay with reason-semantic regression checks and fail-closed drift detection"},
-    "DETERMINISTIC_PROOF_GREEN": {"status":"PASS","evidence":"main run 31361968953 executed all mechanism tests successfully; sole Python failure was stale DISCOVERED state assertion; Go passed"},
-    "ADVERSARIAL_SURVIVAL": {"status":"PASS","evidence":"adversarial and refusal-harness tests passed in run 31361968953"},
+    "DETERMINISTIC_PROOF_GREEN": {"status":"PASS","evidence":"PR #3 candidate e689ff6ce065edcf2f7284b53053de0c6b104b0d passed Python and Go in workflow 31451453394"},
+    "ADVERSARIAL_SURVIVAL": {"status":"PASS","evidence":"adversarial and refusal-harness tests passed in workflow 31451453394"},
     "OPERABLE_AND_OBSERVABLE": {"status":"PASS","evidence":"machine/operability_receipt.json + scripts/operate.py"},
     "PROOF_RECEIPT_BOUND": {"status":"PASS","evidence":"machine/proof_receipt.json retained"},
     "AUTHORITY_BOUND": {"status":"PASS","evidence":"machine/promotion_authority.json; independent reference authority only"},
@@ -54,10 +54,12 @@
   "gap_reconciliation": {
     "historical_gap_ref": "machine/gap-receipt.json",
     "historical_gap_at": "2026-08-10T05:49Z",
-    "status": "SUPERSEDED_BY_LATER_CANONICAL_ARTIFACTS_PENDING_BRANCH_CI",
+    "status": "SUPERSEDED_BY_EXACT_BRANCH_CI",
     "repair_base_sha": "c11c91f89c2e450b86991e737e88a0a8bb79148b",
-    "main_failure_run": 31361968953,
-    "main_failure_scope": "state assertion only; mechanism/adversarial tests and Go passed"
+    "tested_candidate_sha": "e689ff6ce065edcf2f7284b53053de0c6b104b0d",
+    "workflow_run": 31451453394,
+    "python": "PASS",
+    "go": "PASS"
   },
   "state": "EVOLVING"
 }
